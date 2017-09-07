@@ -1,0 +1,16 @@
+<h1><%= @user_name %></h1>
+
+<h2>Email Address: <%= @users[@user_name.to_sym][:email] %></h2>
+
+<h2>Interests: <%= @interests %>.</h2>
+
+<h4>More users:</h4>
+  <ul>
+    <% @users.keys.reject { |user| user == @user_name.to_sym }.each do |other_user| %>
+    <li>
+      <a href="/<%= other_user %>"><%= other_user %></a>
+    </li>
+    <% end %>
+  </ul>
+
+<h4><a href="/">Return to homepage</a></h4>
