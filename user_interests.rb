@@ -30,10 +30,6 @@ get "/:name" do
   erb :user_page
 end
 
-get "/yaml" do
-  @users.inspect
-end
-
 helpers do 
   def get_interests(user_name)
     @users[user_name.to_sym][:interests].join(", ")
@@ -50,5 +46,4 @@ helpers do
   def valid?(name)
     @users.keys.include?(name.to_sym)
   end
-
 end
